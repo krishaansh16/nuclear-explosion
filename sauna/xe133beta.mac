@@ -1,0 +1,32 @@
+# Macro file for sauna
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute test.mac
+#
+#
+# Initialize kernel
+/run/initialize
+/vis/disable
+#
+/control/verbose 2
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+# 
+################
+# ONE PARTICLE #
+################
+#
+#/gps/source/multiplevertex true
+#
+# Xe133 beta from origo with an isotropic angle distribution
+#
+/gps/particle e-
+/gps/ene/type User
+/gps/hist/type energy
+/control/execute hist_xe133.mac
+/gps/pos/centre 0. 0. 0. mm
+/gps/ang/type iso
+#
+/run/beamOn 1000000
+/vis/enable

@@ -1,0 +1,33 @@
+# Macro file for sauna
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute test.mac
+#
+#
+# Initialize kernel
+/run/initialize
+#
+/control/verbose 2
+/run/verbose 2
+/event/verbose 2
+/tracking/verbose 1
+# 
+##########################
+# MORE THAN ONE PARTICLE #
+##########################
+#
+#/gps/source/multiplevertex true
+#
+#############
+# gamma
+#############
+/gps/particle gamma 
+/gps/ene/mono 900 keV
+#
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/radius 9 mm
+/gps/pos/halfz 32.5 mm
+/gps/ang/type iso
+#
+/run/beamOn 50

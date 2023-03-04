@@ -1,0 +1,27 @@
+# Macro file for sauna
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute cesium.mac
+#
+# Change the default number of workers (in multi-threading mode) 
+#/run/numberOfThreads 4
+#
+# Initialize kernel
+/run/initialize
+#
+/vis/disable
+/control/verbose 2
+/run/verbose 2
+/event/verbose 2
+/tracking/verbose 1
+# 
+# gamma 662 keV from (0,0,0) and isotropic angle distribution
+#
+/gps/particle gamma
+/gps/ene/type Gauss
+/gps/ene/mono 661.657 keV
+/gps/ene/sigma 0.003 keV
+/gps/pos/centre 0 0. 0. mm
+/gps/ang/type iso
+/run/beamOn 1000000
+/vis/enable
